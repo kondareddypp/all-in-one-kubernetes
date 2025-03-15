@@ -1,0 +1,54 @@
+Kubernetes architecture is designed to provide scalability, reliability, and automation for managing containerized applications. Here's an overview of its key components:
+
+---
+
+## **1. Master Node (Control Plane)**
+The master node is responsible for managing the cluster and ensuring the desired state of applications.
+
+### Components:
+- **API Server**: Acts as the front end for the Kubernetes control plane, exposing APIs for interaction.
+- **Scheduler**: Assigns workloads (pods) to appropriate worker nodes based on resource availability.
+- **Controller Manager**: Ensures the desired state of the cluster by managing controllers like ReplicationController, NodeController, etc.
+- **etcd**: A key-value store used to store cluster configuration and state.
+
+---
+
+## **2. Worker Nodes**
+Worker nodes run the containerized applications and handle workloads assigned by the master node.
+
+### Components:
+- **Kubelet**: An agent that ensures containers are running in a Pod.
+- **Kube-Proxy**: Manages networking and communication between pods and services.
+- **Container Runtime**: Executes containers (e.g., Docker, containerd).
+
+---
+
+## **3. Key Objects in Kubernetes**
+These objects help define and manage your applications and workloads.
+
+### Key Objects:
+- **Pod**: The smallest deployable unit in Kubernetes, representing one or more containers.
+- **Service**: Exposes a set of pods as a network service.
+- **Deployment**: Manages the deployment and scaling of pods.
+- **ConfigMap** and **Secret**: Store configuration data and sensitive information, respectively.
+
+---
+
+## **4. Cluster Networking**
+Kubernetes networking ensures seamless communication between pods, services, and external users.
+
+### Features:
+- **Pod-to-Pod Communication**: Pods within the cluster communicate without Network Address Translation (NAT).
+- **Service Discovery**: Automatically assigns DNS names to services.
+- **Ingress**: Manages external HTTP/S traffic to applications.
+
+---
+
+## **5. Add-Ons**
+Optional components to extend Kubernetes functionality:
+- **Dashboard**: A web-based UI for managing the cluster.
+- **Monitoring**: Tools like Prometheus and Grafana for performance monitoring.
+- **Logging**: Centralized logging systems like Fluentd.
+
+---
+
